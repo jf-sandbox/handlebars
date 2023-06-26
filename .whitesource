@@ -1,3 +1,36 @@
 {
-  "settingsInheritedFrom": "jf-sandbox/whitesource-config@main"
+  "scanSettings": {
+    "configMode": "LOCAL",
+    "enableIaC": true,
+    "enableLicenseViolations": true
+  },
+  "buildSettings": {
+    "createBuildStatus": true
+  },
+  "checkRunSettings": {
+    "vulnerableCheckRunConclusionLevel": "failure",
+    "iacCheckRunConclusionLevel": "failure",
+    "licenseCheckRunConclusionLevel": "failure",
+    "displayMode": "diff",
+    "useMendCheckNames": true
+  },
+  "issueSettings": {
+    "minSeverityLevel": "LOW",
+    "issueType": "DEPENDENCY"
+  },
+  "remediateSettings": {
+    "workflowRules": {
+      "enabled": true
+    },
+    "enableRenovate": true,
+    "extends": ["config:base", "group:all"],
+    "schedule": ["before 3am on the first day of the month"],
+    "packageRules": [
+      {
+        "matchPackageNames": ["react-scripts", "typescript", "jest", "ts-jest"],
+        "groupName": "Core Frontend libraries",
+        "description": "Put extra care when updating these packages. They are the core of the frontend."
+      }
+    ]
+  }
 }
