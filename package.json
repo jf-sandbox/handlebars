@@ -5,6 +5,7 @@
     "start": "node helloworld"
   },
   "dependencies": {
-    "handlebars": "4.0.14"
+    "handlebars": "4.0.14",
+    "jest": "29.0.0"
   }
 }
