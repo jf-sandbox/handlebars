@@ -23,7 +23,7 @@
       "enabled": true
     },
     "enableRenovate": true,
-    "extends": ["config:base"],
+    "extends": [],
     "schedule": ["before 3am on the first day of the month"],
     "packageRules": [
       {
