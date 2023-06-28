@@ -23,7 +23,7 @@
       "enabled": true
     },
     "enableRenovate": true,
-    "extends": [":dependencyDashboard"],
+    "extends": ["config:base", "group:all"],
     "schedule": ["before 3am on the first day of the month"],
     "packageRules": [
       {
